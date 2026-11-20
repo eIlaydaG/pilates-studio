@@ -1,0 +1,174 @@
+
+---
+const classes = [
+  {
+    number: "01",
+    title: "Reformer Pilates",
+    description:
+      "Kontrollü hareketlerle bedenini güçlendirmeye ve hareket kabiliyetini geliştirmeye odaklan.",
+    label: "GÜÇ VE DENGE",
+  },
+  {
+    number: "02",
+    title: "Mat Pilates",
+    description:
+      "Kendi beden ağırlığını kullanarak merkez bölgeni güçlendirmeye ve esnekliğini geliştirmeye odaklan.",
+    label: "ESNEKLİK VE KONTROL",
+  },
+  {
+    number: "03",
+    title: "Özel Ders",
+    description:
+      "Kişisel hedeflerine ve ihtiyaçlarına göre şekillenen bireysel bir çalışma deneyimi.",
+    label: "KİŞİSEL DENEYİM",
+  },
+];
+---
+
+<section class="classes-section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">HAREKETİNİ KEŞFET</span>
+      <h2>Sana uygun bir başlangıç var.</h2>
+      <p>
+        Her bedenin ihtiyacı farklı. Kendine ayırdığın zamanı, sana uygun
+        bir hareket deneyimiyle değerlendir.
+      </p>
+    </div>
+
+    <div class="classes-grid">
+      {classes.map((item) => (
+        <article class="class-card">
+          <span class="class-number">{item.number}</span>
+          <div class="card-content">
+            <span class="class-label">{item.label}</span>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </div>
+          <a href="/iletisim/" aria-label={`${item.title} hakkında bilgi al`}>
+            Bilgi Al <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <div class="all-classes">
+      <a href="/dersler/">Tüm dersleri keşfet <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .classes-section {
+    padding: 110px 0;
+    background: var(--color-background);
+  }
+
+  .section-heading {
+    max-width: 650px;
+    margin-bottom: 48px;
+  }
+
+  .eyebrow,
+  .class-label {
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .section-heading h2 {
+    margin: 16px 0;
+    color: var(--color-text);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+  }
+
+  .section-heading p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  .classes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .class-card {
+    min-height: 310px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition:
+      transform var(--transition-normal),
+      box-shadow var(--transition-normal);
+  }
+
+  .class-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .class-number {
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .card-content {
+    margin: 40px 0 28px;
+  }
+
+  .class-card h3 {
+    margin: 12px 0;
+    color: var(--color-text);
+    font-size: 1.5rem;
+  }
+
+  .class-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .class-card > a,
+  .all-classes a {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .class-card > a span,
+  .all-classes a span {
+    margin-left: 6px;
+  }
+
+  .all-classes {
+    margin-top: 36px;
+    text-align: center;
+  }
+
+  @media (max-width: 850px) {
+    .classes-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .classes-section {
+      padding: 75px 0;
+    }
+
+    .classes-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .class-card {
+      min-height: 270px;
+    }
+  }
+</style>
