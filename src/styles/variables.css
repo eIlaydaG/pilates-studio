@@ -1,0 +1,58 @@
+
+:root {
+    /* Brand Colors */
+    --color-soft-white: #FAF9FC;
+    --color-lavender: #DCD2EA;
+    --color-mauve: #927CB8;
+    --color-deep-plum: #3F315B;
+  
+    /* Text Colors */
+    --color-text-primary: #3F315B;
+    --color-text-secondary: #71677D;
+    --color-text-light: #FFFFFF;
+  
+    /* Background Colors */
+    --color-background: #FAF9FC;
+    --color-background-soft: #F1ECF6;
+    --color-background-dark: #3F315B;
+  
+    /* Typography */
+    --font-heading: Georgia, "Times New Roman", serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  
+    /* Font Sizes */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 3rem;
+  
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 5rem;
+  
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+  
+    /* Shadows */
+    --shadow-soft: 0 8px 30px rgba(63, 49, 91, 0.08);
+    --shadow-card: 0 12px 35px rgba(63, 49, 91, 0.12);
+  
+    /* Layout */
+    --container-width: 1200px;
+    --navbar-height: 80px;
+  
+    /* Transitions */
+    --transition-fast: 200ms ease;
+    --transition-normal: 300ms ease;
+  }
+  

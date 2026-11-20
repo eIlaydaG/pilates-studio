@@ -1,0 +1,96 @@
+
+---
+const navigation = [
+  { label: "Ana Sayfa", href: "/" },
+  { label: "Dersler", href: "/dersler/" },
+  { label: "Eğitmenler", href: "/egitmenler/" },
+  { label: "Hakkımızda", href: "/hakkimizda/" },
+  { label: "İletişim", href: "/iletisim/" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a href="/" class="logo">Pilates Studio<span>.</span></a>
+
+    <nav aria-label="Ana navigasyon">
+      {navigation.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            "nav-link",
+            { active: currentPath === item.href }
+          ]}
+          aria-current={currentPath === item.href ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    min-height: var(--navbar-height);
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-lavender);
+  }
+
+  .navbar-inner {
+    min-height: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-deep-plum);
+    white-space: nowrap;
+  }
+
+  .logo span {
+    color: var(--color-mauve);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    transition: color var(--transition-fast);
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-deep-plum);
+  }
+
+  .nav-link.active {
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-inner {
+      flex-direction: column;
+      justify-content: center;
+      padding-block: 1rem;
+    }
+
+    nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+</style>
