@@ -1,0 +1,83 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { classes } from "../data/classes";
+const whatsappNumber = "";
+---
+
+<MainLayout
+    title="Dersler | Pilates Studio"
+    description="Reformer Pilates, Mat Pilates ve Özel Ders seçeneklerini keşfet."
+>
+    <main class="section container">
+        <h1>Dersler</h1>
+
+        <div class="classes-grid">
+            {
+                classes.map((item) => (
+                    <article class="class-card">
+                        <img src={item.image} alt={item.alt} />
+                        <div class="class-content">
+                            <h2>{item.title}</h2>
+                            <p>{item.description}</p>
+                            <p class="class-details">{item.details}</p>
+
+                            {whatsappNumber && (
+                                <a
+                                    class="class-booking"
+                                    href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+                                        `Merhaba, ${item.title} için randevu almak istiyorum. Müsait gün ve saatlerinizi paylaşabilir misiniz?`,
+                                    )}`}
+                                >
+                                    WhatsApp’tan randevu al
+                                </a>
+                            )}
+                        </div>
+                    </article>
+                ))
+            }
+        </div>
+    </main>
+</MainLayout>
+
+<style>
+    .class-details {
+        margin-top: var(--spacing-sm);
+    }
+
+    .class-booking {
+        display: inline-block;
+        margin-top: var(--spacing-md);
+        color: var(--color-deep-plum);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+    }
+    .classes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+    }
+
+    .class-card {
+        overflow: hidden;
+        border: 1px solid var(--color-lavender);
+        border-radius: var(--radius-md);
+        background: var(--color-background-soft);
+    }
+
+    .class-card img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+
+    .class-content {
+        padding: var(--spacing-md);
+    }
+
+    .class-content h2 {
+        margin-bottom: var(--spacing-xs);
+        font-size: var(--font-size-xl);
+    }
+</style>
