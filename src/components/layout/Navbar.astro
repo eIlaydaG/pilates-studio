@@ -2,8 +2,8 @@
 ---
 const navigation = [
   { label: "Ana Sayfa", href: "/" },
-  { label: "Dersler", href: "/dersler/" },
-  { label: "Eğitmenler", href: "/egitmenler/" },
+  { label: "Dersler", href: "/#dersler" },
+  { label: "Eğitmenimiz", href: "/#egitmen" },
   { label: "Hakkımızda", href: "/hakkimizda/" },
   { label: "İletişim", href: "/iletisim/" },
 ];
@@ -13,7 +13,10 @@ const currentPath = Astro.url.pathname;
 
 <header class="navbar">
   <div class="container navbar-inner">
-    <a href="/" class="logo">Pilates Studio<span>.</span></a>
+
+    <a href="/" class="logo">
+      Pilates Studio<span>.</span>
+    </a>
 
     <nav aria-label="Ana navigasyon">
       {navigation.map((item) => (
@@ -29,11 +32,18 @@ const currentPath = Astro.url.pathname;
         </a>
       ))}
     </nav>
+
+    <a href="/iletisim/" class="nav-cta">
+      Randevu Al <span aria-hidden="true">↗</span>
+    </a>
+
   </div>
 </header>
 
 <style>
   .navbar {
+    position: relative;
+    z-index: 10;
     min-height: var(--navbar-height);
     background: var(--color-background);
     border-bottom: 1px solid var(--color-lavender);
@@ -62,7 +72,7 @@ const currentPath = Astro.url.pathname;
   nav {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.8rem;
   }
 
   .nav-link {
@@ -80,17 +90,68 @@ const currentPath = Astro.url.pathname;
     font-weight: 600;
   }
 
-  @media (max-width: 768px) {
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.8rem 1.3rem;
+    border-radius: var(--radius-full);
+    background: var(--color-deep-plum);
+    color: white;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    white-space: nowrap;
+    transition:
+      background-color var(--transition-normal),
+      transform var(--transition-normal);
+  }
+
+  .nav-cta:hover {
+    background: var(--color-mauve);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 950px) {
     .navbar-inner {
-      flex-direction: column;
+      flex-wrap: wrap;
       justify-content: center;
       padding-block: 1rem;
+      gap: 1rem;
     }
 
     nav {
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
+      gap: 1rem 1.3rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .navbar-inner {
+      flex-direction: column;
+    }
+
+    nav {
+      gap: 0.8rem 1rem;
+    }
+
+    .nav-link {
+      font-size: 0.8rem;
+    }
+
+    .nav-cta {
+      padding: 0.7rem 1.2rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-cta {
+      transition: none;
+    }
+
+    .nav-cta:hover {
+      transform: none;
     }
   }
 </style>

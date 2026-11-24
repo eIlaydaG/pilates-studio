@@ -1,208 +1,234 @@
 
+---
+---
+
 <section class="hero">
-    <div class="hero-overlay"></div>
-  
-    <div class="container hero-content">
-      <span class="hero-label">PILATES • WELLNESS • BALANCE</span>
-  
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+    <div class="hero-text">
+
+      <span class="hero-label">
+        PILATES • WELLNESS • BALANCE
+      </span>
+
       <h1>
         Kendine ayırdığın
         <span>en güzel zaman.</span>
       </h1>
-  
+
       <p class="hero-description">
-        Bedenini keşfet, gücünü hisset ve hayatına yeni bir denge kat.
+        Bedenini keşfet, gücünü hisset ve hayatına
+        yeni bir denge kat.
         Pilates yolculuğuna bizimle başla.
       </p>
-  
+
       <div class="hero-actions">
         <a href="/iletisim/" class="hero-button primary">
           Randevu Talep Et
           <span aria-hidden="true">→</span>
         </a>
-  
-        <a href="/dersler/" class="hero-button secondary">
+
+        <a href="#dersler" class="hero-button secondary">
           Derslerimizi Keşfet
         </a>
       </div>
+
     </div>
-  
-    <div class="hero-bottom">
-      <span>HAREKET ET • DENGE KUR • İYİ HİSSET</span>
-      <span class="scroll-indicator">SCROLL ↓</span>
-    </div>
-  </section>
-  
-  <style>
-    .hero {
-      position: relative;
-      isolation: isolate;
-      min-height: min(760px, calc(100svh - var(--navbar-height)));
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      color: white;
-  
-      background-color: #655477;
-      background-image:
-        linear-gradient(
-          90deg,
-          rgba(35, 25, 51, 0.78) 0%,
-          rgba(63, 49, 91, 0.48) 55%,
-          rgba(63, 49, 91, 0.15) 100%
-        ),
-        url("/images/studio/hero.jpg");
-  
-      background-size: cover;
-      background-position: center;
-    }
-  
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: linear-gradient(
+  </div>
+
+  <div class="hero-bottom">
+    <span>HAREKET ET • DENGE KUR • İYİ HİSSET</span>
+    <span class="scroll-indicator">SCROLL ↓</span>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    isolation: isolate;
+    min-height: min(760px, calc(100svh - var(--navbar-height)));
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+
+    background-color: #655477;
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(35, 25, 51, 0.86) 0%,
+        rgba(63, 49, 91, 0.68) 40%,
+        rgba(63, 49, 91, 0.22) 100%
+      ),
+      url("/images/studio/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background:
+      linear-gradient(
         0deg,
-        rgba(35, 25, 51, 0.25),
+        rgba(35, 25, 51, 0.48) 0%,
         transparent 45%
       );
+  }
+
+  .hero-content {
+    position: relative;
+    width: 100%;
+    max-width: var(--container-width);
+    padding-block: 7rem;
+  }
+
+  .hero-text {
+    max-width: 850px;
+  }
+
+  .hero-label {
+    display: inline-block;
+    color: #E8DFF1;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    color: #FFFFFF;
+    max-width: 850px;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.08;
+    font-weight: 500;
+  }
+
+  .hero h1 span {
+    display: block;
+    color: #E2D5F0;
+    font-style: italic;
+  }
+
+  .hero-description {
+    max-width: 540px;
+    margin-top: 1.75rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .hero-button {
+    min-height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.9rem 1.7rem;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+
+    transition:
+      background-color var(--transition-normal),
+      color var(--transition-normal),
+      transform var(--transition-normal);
+  }
+
+  .hero-button:hover {
+    transform: translateY(-3px);
+  }
+
+  .hero-button.primary {
+    background: #DCD2EA;
+    color: #3F315B;
+  }
+
+  .hero-button.primary:hover {
+    background: #FFFFFF;
+  }
+
+  .hero-button.secondary {
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+  }
+
+  .hero-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .hero-bottom {
+    position: absolute;
+    bottom: 1.75rem;
+    left: 50%;
+    width: min(calc(100% - 40px), var(--container-width));
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 680px;
+      background-position: 65% center;
     }
-  
+
     .hero-content {
-      position: relative;
-      padding-block: 7rem;
-      max-width: var(--container-width);
+      padding-block: 5rem;
     }
-  
-    .hero-label {
-      display: inline-block;
-      color: #E8DFF1;
-      font-size: var(--font-size-xs);
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      margin-bottom: 1.5rem;
-    }
-  
+
     .hero h1 {
-      color: #FFFFFF;
-      max-width: 800px;
-      font-size: clamp(3rem, 7vw, 6rem);
-      line-height: 1.08;
-      font-weight: 500;
+      font-size: clamp(2.8rem, 11vw, 4.5rem);
     }
-  
-    .hero h1 span {
-      display: block;
-      color: #E2D5F0;
-      font-style: italic;
-    }
-  
+
     .hero-description {
-      max-width: 540px;
-      margin-top: 1.75rem;
-      color: rgba(255, 255, 255, 0.88);
-      font-size: var(--font-size-lg);
-      line-height: 1.8;
+      font-size: var(--font-size-base);
     }
-  
+
     .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 2.5rem;
+      align-items: stretch;
+      flex-direction: column;
+      max-width: 300px;
     }
-  
-    .hero-button {
-      min-height: 54px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      padding: 0.9rem 1.7rem;
-      border-radius: var(--radius-full);
-      font-size: var(--font-size-sm);
-      font-weight: 600;
-      transition:
-        background-color var(--transition-normal),
-        color var(--transition-normal),
-        transform var(--transition-normal);
-    }
-  
-    .hero-button:hover {
-      transform: translateY(-3px);
-    }
-  
-    .hero-button.primary {
-      background: #DCD2EA;
-      color: #3F315B;
-    }
-  
-    .hero-button.primary:hover {
-      background: #FFFFFF;
-    }
-  
-    .hero-button.secondary {
-      color: #FFFFFF;
-      border: 1px solid rgba(255, 255, 255, 0.65);
-    }
-  
-    .hero-button.secondary:hover {
-      background: rgba(255, 255, 255, 0.15);
-    }
-  
+
     .hero-bottom {
-      position: absolute;
-      bottom: 1.75rem;
-      left: 50%;
-      width: min(calc(100% - 40px), var(--container-width));
-      transform: translateX(-50%);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: rgba(255, 255, 255, 0.75);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
     }
-  
-    @media (max-width: 768px) {
-      .hero {
-        min-height: 680px;
-        background-position: 60% center;
-      }
-  
-      .hero-content {
-        padding-block: 5rem;
-      }
-  
-      .hero h1 {
-        font-size: clamp(2.8rem, 11vw, 4.5rem);
-      }
-  
-      .hero-description {
-        font-size: var(--font-size-base);
-      }
-  
-      .hero-actions {
-        align-items: stretch;
-        flex-direction: column;
-        max-width: 300px;
-      }
-  
-      .hero-bottom {
-        font-size: 0.58rem;
-        letter-spacing: 0.08em;
-      }
+  }
+
+  @media (max-width: 380px) {
+    .hero-bottom {
+      font-size: 0.5rem;
     }
-  
-    @media (prefers-reduced-motion: reduce) {
-      .hero-button {
-        transition: none;
-      }
-  
-      .hero-button:hover {
-        transform: none;
-      }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-button {
+      transition: none;
     }
-  </style>
-  
+
+    .hero-button:hover {
+      transform: none;
+    }
+  }
+</style>

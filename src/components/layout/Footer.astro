@@ -1,109 +1,131 @@
 
 <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <a href="/" class="logo">Pilates Studio<span>.</span></a>
-        <p>Hareketin, dengenin ve kendine ayırdığın zamanın buluştuğu yer.</p>
-      </div>
-  
-      <div class="footer-links">
-        <h3>Keşfet</h3>
-        <a href="/">Ana Sayfa</a>
-        <a href="/dersler/">Dersler</a>
-        <a href="/egitmenler/">Eğitmenler</a>
-        <a href="/hakkimizda/">Hakkımızda</a>
-        <a href="/iletisim/">İletişim</a>
-      </div>
-  
-      <div class="footer-contact">
-        <h3>Bizimle İletişime Geç</h3>
-        <p>Yeni bir başlangıç için ilk adımını at.</p>
-        <a href="/iletisim/" class="contact-link">Bize Ulaşın →</a>
-      </div>
+  <div class="container footer-content">
+
+    <div class="footer-brand">
+      <a href="/" class="logo">
+        Pilates Studio<span>.</span>
+      </a>
+
+      <p>
+        Hareketin, dengenin ve kendine ayırdığın
+        zamanın buluştuğu yer.
+      </p>
     </div>
-  
-    <div class="container footer-bottom">
-      <p>© {new Date().getFullYear()} Pilates Studio. Tüm hakları saklıdır.</p>
+
+    <div class="footer-links">
+      <h3>Keşfet</h3>
+
+      <a href="/">Ana Sayfa</a>
+      <a href="/#dersler">Dersler</a>
+      <a href="/#egitmen">Eğitmenimiz</a>
+      <a href="/hakkimizda/">Hakkımızda</a>
+      <a href="/iletisim/">İletişim</a>
     </div>
-  </footer>
-  
-  <style>
-    .footer {
-      background: var(--color-background-soft);
-      padding-top: 4rem;
-      margin-top: var(--spacing-2xl);
-    }
-  
+
+    <div class="footer-contact">
+      <h3>Bizimle İletişime Geç</h3>
+
+      <p>
+        Kendine ayıracağın zaman için
+        ilk adımını bugün at.
+      </p>
+
+      <a href="/iletisim/" class="contact-link">
+        Randevu Talep Et →
+      </a>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <p>
+      © {new Date().getFullYear()} Pilates Studio.
+      Tüm hakları saklıdır.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-background-soft);
+    padding-top: 4rem;
+    margin-top: var(--spacing-2xl);
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .logo {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-deep-plum);
+  }
+
+  .logo span {
+    color: var(--color-mauve);
+  }
+
+  .footer-brand p,
+  .footer-contact p {
+    margin-top: 1rem;
+    max-width: 300px;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+  }
+
+  .footer-links,
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .footer h3 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-deep-plum);
+  }
+
+  .footer-links a,
+  .contact-link {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    transition: color var(--transition-fast);
+  }
+
+  .footer-links a:hover,
+  .contact-link:hover {
+    color: var(--color-mauve);
+  }
+
+  .contact-link {
+    font-weight: 600;
+    color: var(--color-deep-plum);
+    margin-top: 0.5rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--color-lavender);
+    padding-block: 1.5rem;
+  }
+
+  .footer-bottom p {
+    font-size: var(--font-size-xs);
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
     .footer-content {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      padding-bottom: 3rem;
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
-  
-    .logo {
-      font-family: var(--font-heading);
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--color-deep-plum);
-    }
-  
-    .logo span {
-      color: var(--color-mauve);
-    }
-  
-    .footer-brand p,
-    .footer-contact p {
-      margin-top: 1rem;
-      max-width: 300px;
-    }
-  
-    .footer-links,
-    .footer-contact {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.8rem;
-    }
-  
-    .footer h3 {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      font-weight: 600;
-    }
-  
-    .footer-links a,
-    .contact-link {
-      color: var(--color-text-secondary);
-      font-size: var(--font-size-sm);
-      transition: color var(--transition-fast);
-    }
-  
-    .footer-links a:hover,
-    .contact-link:hover {
-      color: var(--color-mauve);
-    }
-  
-    .contact-link {
-      font-weight: 600;
-      color: var(--color-deep-plum);
-    }
-  
-    .footer-bottom {
-      border-top: 1px solid var(--color-lavender);
-      padding-block: 1.5rem;
-    }
-  
-    .footer-bottom p {
-      font-size: var(--font-size-xs);
-      text-align: center;
-    }
-  
-    @media (max-width: 768px) {
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-    }
-  </style>
-  
+  }
+</style>
